@@ -1,0 +1,30 @@
+<div class='container bg-info w-75 pt-4 pl-4 pb-2 mb-3'>
+    <h2>Sandwich Menu</h2>
+    {{#each burgers}}
+        {{#unless devoured}}
+            <p>{{> sandwiches/burger-block devoured=false}}</p>
+        {{/unless}}
+    {{/each}}
+</div>
+
+<div class='container bg-success w-75 pt-4 pl-4 pb-2 mb-3'>
+    <h2>Devoured Sandwiches</h2>
+    {{#each burgers}}
+        {{#if devoured}}
+            <p>{{> sandwiches/burger-block devoured=true}}</p>
+        {{/if}}
+    {{/each}}
+</div>
+
+<div class='container bg-primary w-75 pt-4 pl-4 pb-2'>
+<h3>Build Your Own Sandwich</h3>
+<form class="create">
+
+    <div class="form-group">
+        <label for="sandwich_description">Sandwich:</label>
+        <input type="text" id="sandwich_description" name="sandwich">
+        {{!-- <textarea id='sandwich_description' cols='100' rows='4'>Build your sandwich here!</textarea> --}}
+    </div>
+
+    <button type="submit">Add Sandwich</button>
+</form>
