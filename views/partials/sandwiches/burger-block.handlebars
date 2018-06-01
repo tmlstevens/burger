@@ -1,0 +1,12 @@
+<div>
+	{{!-- the column as it is named in the database --}}
+	{{sandwich}}
+
+	<button class="update-sandwich" data-id="{{id}}" data-devoured="{{devoured}}">
+		{{#if devoured}}Uneat Me!{{else}}Eat Me!{{/if}}
+	</button>
+	{{#if devoured}}
+		<button class="delete-sandwich" data-id="{{this.id}}">Purge</button>
+	{{/if}}
+
+</div>
